@@ -9,12 +9,9 @@ def home():
     return"SITE ON WORKING "
 
 with app.app_context():
-    try:
-        db.engine.connect()
-        print("✅ Database Connected Successfully!")
-    except Exception as e:
-        print("❌ Database Connection Failed!")
-        print(e)
+    db.create_all()
+    print("sussfull create all table")
+    
 
 if __name__=="__main__":
     
